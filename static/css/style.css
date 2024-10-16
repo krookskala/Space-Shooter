@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: black;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Press Start 2P", cursive;
+    color: white;
+    cursor: none;
+}
+
+body.show-cursor {
+    cursor: default;
+}
+
+.main {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.game-over-container .menu-button {
+    display: block;
+    width: 200px;
+    padding: 15px;
+    margin: 20px auto;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.game-over-container .menu-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.startcraft {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url("../images/starship.png") no-repeat center center;
+    background-size: cover;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.score {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    font-size: 1.5rem;
+}
+
+.bullet {
+    position: absolute;
+    height: 35px;
+    width: 5px;
+    background: red;
+    border-radius: 10px;
+    opacity: 0.7;
+    box-shadow: 0px 1px 15px white;
+    transform: translate(-50%, -10%);
+}
+
+.rock {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: url("../images/rock.png") no-repeat center center;
+    background-size: cover;
+    animation: rotaterock 1s ease-in-out infinite;
+}
+
+.astroidexplode {
+    background: url("../images/boomastroid.png") no-repeat;
+    background-size: cover;
+    animation: none;
+}
+
+.startcraftexplode {
+    background: url("../images/boomcraft.png") no-repeat;
+    background-size: contain;
+    animation: explosion 1s forwards;
+}
+@keyframes explosion {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
+
+.modal input, .modal .startgame {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #000;
+}
+
+.modal input {
+    background-color: #EEE;
+}
+
+.modal .startgame {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.modal .startgame:hover {
+    background-color: black;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.startgame {
+    padding: 0.9rem 3rem;
+    font-size: 1.2rem;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: 0.2s ease;
+    letter-spacing: 2px;
+}
+
+.startgame:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.closemodal {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes rotaterock {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
