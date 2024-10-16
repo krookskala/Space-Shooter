@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url('/static/images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
+}
+
+table {
+    width: 60%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+th {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.pagination, .menu-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-button, .menu-button {
+    padding: 10px 15px;
+    margin: 0 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.page-button:hover, .menu-button:hover {
+    background-color: black;
+}
+
+.page-button[disabled], .menu-button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.menu-button {
+    display: inline-block;
+    width: auto;
+    padding: 10px 30px;
+    margin-top: 20px;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #fff;
+    color: #000;
+}
